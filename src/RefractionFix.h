@@ -14,7 +14,7 @@ namespace VRFov {
      *
      * Ported from the wrappers upstream splices into the two call sites; in process, detours give
      * the same scoping and clean removal without hand written code. See Layout.h for the sites and
-     * PLAN.md for why this is needed at all.
+     * for why this is needed at all; PLAN.md covers replacing MinHook with SDK hooks.
      */
     class RefractionFix {
     public:

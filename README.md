@@ -65,8 +65,9 @@ refraction split is two detours rather than hand-assembled wrappers spliced into
 
 https://github.com/RealChrizzl/hitman-vr-foveation-fix/commit/672eae44817f675c5e56ac809475a5e9cb1a9196
 
-[PLAN.md](PLAN.md) documents the design of this port, including the not-yet-taken path of moving the
-signatures and device layout into SDK core as `Globals`/`Hooks`/Glacier types.
+[PLAN.md](PLAN.md) is the plan for the not-yet-taken path of moving the signatures and device layout
+into SDK core as `Globals`/`Hooks`/Glacier types, and what each piece would delete from this mod.
+The design of the mod as it stands is in the comments in `src/Layout.h` and `src/VRFoveationFix.h`.
 
 ## Building on Windows
 

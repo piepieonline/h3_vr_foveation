@@ -18,7 +18,8 @@ struct SGameUpdateEvent;
  * rendered at full resolution instead of a sharp circle in the centre and a blurry periphery.
  *
  * Port of https://github.com/RealChrizzl/hitman-vr-foveation-fix (MIT, by RealChrizzl).
- * See PLAN.md for the design and Layout.h for the signatures and device offsets.
+ * See Layout.h for the signatures and device offsets, and PLAN.md for what of this mod would be
+ * replaced by SDK core support.
  */
 class VRFoveationFix : public IPluginInterface {
 public:

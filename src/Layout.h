@@ -8,8 +8,9 @@
  * layout of the VR device object. Kept in one file so a game update only ever needs changes here.
  *
  * Signatures and offsets are taken from https://github.com/RealChrizzl/hitman-vr-foveation-fix
- * (MIT, by RealChrizzl), verified against build 3.270.1. See PLAN.md and that project's
- * docs/HOW-IT-WORKS.md for what each site does and docs/UPDATING.md for how to refresh them.
+ * (MIT, by RealChrizzl), verified against build 3.270.1. See that project's docs/HOW-IT-WORKS.md for
+ * what each site does and docs/UPDATING.md for how to refresh them; PLAN.md covers what of this file
+ * would move into SDK core.
  */
 namespace VRFov::Layout {
     /** A code site to patch, described the way the upstream project describes it. */
