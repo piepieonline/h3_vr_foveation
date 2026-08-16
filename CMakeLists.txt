@@ -14,6 +14,14 @@ set(CMAKE_CXX_STANDARD 23)
 add_library(VRFoveationFix SHARED
     src/VRFoveationFix.cpp
     src/VRFoveationFix.h
+    src/CodePatcher.cpp
+    src/CodePatcher.h
+    src/ProcessInfo.cpp
+    src/ProcessInfo.h
+    src/RefractionFix.cpp
+    src/RefractionFix.h
+    src/MsvcIntrinsics.cpp
+    src/Layout.h
 )
 
 # Set UTF-8 flag.
@@ -22,11 +30,16 @@ set_target_properties(VRFoveationFix PROPERTIES COMPILE_FLAGS "/utf-8")
 # Add SDK and DX headers dependencies.
 find_package(directx-headers CONFIG REQUIRED)
 
+# The refraction split detours two game functions. The SDK's own hooks are a fixed, exported set,
+# so this mod carries its own copy of the same library the SDK uses.
+find_package(minhook CONFIG REQUIRED)
+
 target_link_libraries(VRFoveationFix
     ZHMModSDK
     Microsoft::DirectX-Guids
     Microsoft::DirectX-Headers
     implot
+    minhook::minhook
 )
 
 install(TARGETS VRFoveationFix
