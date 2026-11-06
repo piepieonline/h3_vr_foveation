@@ -3,10 +3,9 @@ name: Build
 on:
   push:
     branches:
-      - master
       - main
   release:
-    types: [created]
+    types: [published]
   pull_request:
     types: [opened, synchronize, reopened]
 
