@@ -167,7 +167,8 @@ the guard thread and the diagnostics dump (`VRFoveationFix.cpp:240`, `:246`, `:2
 Not portable, and shouldn't be: this is policy, not knowledge about the game.
 
 - The state machine and transition-only logging (`Inert` → `WaitingForVR` → `WaitingForMission` →
-  `Active` / `Failed`), and the `enabled` setting.
+  `Active` / `Failed`). There is no configuration: the Mod Selector's load/unload is the on/off
+  switch, and unloading reverts everything.
 - `SyncDeviceFields` — validate before capturing, write before `+0x319` says active, read back and
   roll back, forget on device change. One validated write path under one lock.
 - The renderer guard thread. The game restores its own foveation values during mission, scene and

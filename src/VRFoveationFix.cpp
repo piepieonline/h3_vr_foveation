@@ -102,15 +102,6 @@ VRFoveationFix::~VRFoveationFix() {
 }
 
 void VRFoveationFix::Init() {
-    if (!HasSetting("general", "enabled")) {
-        SetSettingBool("general", "enabled", true);
-    }
-
-    if (!GetSettingBool("general", "enabled", true)) {
-        SetState(State::Inert, "Disabled in VRFoveationFix.ini, nothing was patched.");
-        return;
-    }
-
     std::vector<MemoryPatch> s_Patches;
 
     if (!LocateSites(s_Patches)) {

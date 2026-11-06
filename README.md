@@ -41,8 +41,8 @@ The mod has to be loaded **before VR initialises** — not necessarily before th
 it on mid-session is fine as long as you have not started VR yet in that session. If VR is already
 running when the mod loads it refuses, logs why, and changes nothing; restart the game in that case.
 
-Set `enabled = false` under `[general]` in `VRFoveationFix.ini` (next to the mod DLL) to turn it off
-without unloading it.
+Turning it off is the Mod Selector: unloading the mod reverts the patches, restores the device
+fields and puts the game back on its own foveated rendering.
 
 ## Credit and maintenance
 
@@ -168,7 +168,7 @@ Three of those settings are worth explaining:
 
 - `VCPKG_TARGET_TRIPLET` names the overlay triplet in
   [cmake/vcpkg-overlays/](cmake/vcpkg-overlays/), which chainloads the `clang-cl` toolchain for
-  every port so the mod's only dependency (`directx-headers`) is built for Windows.
+  every port so the mod's dependencies (`directx-headers` and `minhook`) are built for Windows.
 - `VCPKG_HOST_TRIPLET` has to be `x64-linux` — vcpkg's own host tools are native.
 - `ZHMMODSDK_PRESET` must name a cross preset. Without it the SDK builds itself with the default
   `x64-Release` preset, which uses `cl.exe` and cannot configure on Linux.

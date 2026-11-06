@@ -31,7 +31,7 @@ public:
 
 private:
     enum class State {
-        /** Disabled by settings, or a signature could not be located. Nothing was changed. */
+        /** A signature could not be located, or patching was refused. Nothing was changed. */
         Inert,
 
         /** The code is patched, waiting for VR to come up. */
