@@ -8,7 +8,7 @@
  * layout of the VR device object. Kept in one file so a game update only ever needs changes here.
  *
  * Signatures and offsets are taken from https://github.com/RealChrizzl/hitman-vr-foveation-fix
- * (MIT, by RealChrizzl), verified against build 3.270.1. See that project's docs/HOW-IT-WORKS.md for
+ * (MIT, by RealChrizzl), verified against build 3.290.1. See that project's docs/HOW-IT-WORKS.md for
  * what each site does and docs/UPDATING.md for how to refresh them; PLAN.md covers what of this file
  * would move into SDK core.
  */
@@ -58,7 +58,7 @@ namespace VRFov::Layout {
         },
         {
             "full field of view, OpenVR device",
-            "50 09 00 00 45 33 C0 4C 8B 8E C8 7A 00 00 48 8B D3 48 89 6C 24 28 48 89 6C 24 20 "
+            "E0 08 00 00 45 33 C0 4C 8B 8E C8 7A 00 00 48 8B D3 48 89 6C 24 28 48 89 6C 24 20 "
             "48 8B 01 FF 50 28 48 8B CB E8 ?? ?? ?? ?? FF 4B 14 0F B6 87 1B 03 00 00",
             44, FixFovLimit, sizeof(FixFovLimit)
         },
@@ -190,8 +190,8 @@ namespace VRFov::Layout {
     /** Past the last field the diagnostics dump reads. */
     inline constexpr size_t DeviceDiagnosticSize = 0x540;
 
-    /** PE timestamp of the build the signatures and offsets above were verified against (3.270.1). */
-    inline constexpr uint32_t VerifiedTimestamp = 1781013974;
+    /** PE timestamp of the build the signatures and offsets above were verified against (3.290.1). */
+    inline constexpr uint32_t VerifiedTimestamp = 1792593790;
 
     /** Upper bound for a plausible WNO flag offset decoded from the locator. */
     inline constexpr uint32_t MaxPlausibleFieldOffset = 0x4000;

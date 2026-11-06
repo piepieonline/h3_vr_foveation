@@ -52,7 +52,7 @@ refraction split and renderer guard this mod carries. That project's `docs/HOW-I
 what each site does, and `docs/UPDATING.md` describes how to find them again after a game update —
 the signatures live in [src/Layout.h](src/Layout.h) and nowhere else.
 
-Everything is verified against build 3.270.1. Every signature has to match exactly once or the mod
+Everything is verified against build 3.290.1. Every signature has to match exactly once or the mod
 changes nothing at all and says so in the log, and that includes the three refraction sites: a build
 where only the foveation sites still match is a build where glass and water would be wrong in
 stereo, which is not an improvement worth applying.

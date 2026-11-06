@@ -19,7 +19,7 @@
 | `src/VRFoveationFix.h/.cpp` | 848 | No — policy, state machine, guard, diagnostics |
 | `src/ProcessInfo.h/.cpp` | 108 | No — build identification for the diagnostics report |
 
-Verified against `HITMAN3.exe` build 3.270.1 (PE timestamp `1781013974`); all nine signatures match
+Verified against `HITMAN3.exe` build 3.290.1 (PE timestamp `1792593790`); all nine signatures match
 exactly once each.
 
 ---

@@ -509,7 +509,7 @@ void VRFoveationFix::LogDiagnostics() const {
     Logger::Info("[VRFoveationFix] state                : {}", StateName(m_State));
     Logger::Info(
         "[VRFoveationFix] game build timestamp : {} ({})", s_Timestamp,
-        s_Timestamp == Layout::VerifiedTimestamp ? "the verified build, 3.270.1" : "NOT the verified build"
+        s_Timestamp == Layout::VerifiedTimestamp ? "the verified build, 3.290.1" : "NOT the verified build"
     );
     Logger::Info("[VRFoveationFix] image base           : {:#x}", s_Base);
 
