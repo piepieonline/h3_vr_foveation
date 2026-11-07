@@ -69,6 +69,8 @@ jobs:
     needs: build
     if: github.event_name == 'release'
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Download debug artifact
@@ -90,28 +92,11 @@ jobs:
           cd ../VRFoveationFix-Release
           zip -r VRFoveationFix-Release.zip *
 
-      - name: Get release
-        id: get_release
-        uses: bruceadams/get-release@v1.2.2
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-
-      - name: Upload debug assets
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.get_release.outputs.upload_url }}
-          asset_path: VRFoveationFix-Debug/VRFoveationFix-Debug.zip
-          asset_name: VRFoveationFix-Debug.zip
-          asset_content_type: application/zip
-
       - name: Upload release assets
-        uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.get_release.outputs.upload_url }}
-          asset_path: VRFoveationFix-Release/VRFoveationFix-Release.zip
-          asset_name: VRFoveationFix-Release.zip
-          asset_content_type: application/zip
+          GH_TOKEN: ${{ github.token }}
+        run: >
+          gh release upload "${{ github.event.release.tag_name }}"
+          VRFoveationFix-Debug/VRFoveationFix-Debug.zip
+          VRFoveationFix-Release/VRFoveationFix-Release.zip
+          --repo "${{ github.repository }}"
